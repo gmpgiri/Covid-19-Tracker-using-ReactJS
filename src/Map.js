@@ -1,10 +1,22 @@
 import React from 'react';
 import './Map.css';
-function Map() {
+import {Map as LeafletMap, TileLayer} from "react-leaflet";
+import { showDataOnMap } from './util';
+
+function Map({countries, caseType, center, zoom}) {
     return (
         <div className="map">
-            <h1> I am a map</h1>
+            <LeafletMap center={center} zoom={zoom}>
+                <TileLayer 
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+                {/* loop through all the countries and draw circle
+                    on screen */}
+                {showDataOnMap(countries, caseType)}
+
+            </LeafletMap>
         </div>
-    )
+    );
 }
-export default   Map
+export default Map
