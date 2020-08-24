@@ -32,7 +32,13 @@ export const sortData = (data) => {
 
 };
 
-//Draw Circles on Map with interactive tooltip
+export const prettyPrintStat = (stat) => (
+    stat ? `+${numeral(stat).format("0.0a")}`
+    : "+0" 
+)
+
+
+//Draw Circl    es on Map with interactive tooltip
 export const showDataOnMap = (data, caseType='cases') => (
     data.map(country => (
         <Circle
