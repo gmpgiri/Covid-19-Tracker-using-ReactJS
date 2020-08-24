@@ -2,7 +2,7 @@ import React from "react";
 import {Circle, Popup} from "react-leaflet";
 import numeral from "numeral";
 
-const caseTypeColors = {
+const casesTypeColors = {
     cases: {
         hex: "#CC1034",
         rgb: "rgb(204, 16, 52)",
@@ -39,15 +39,15 @@ export const prettyPrintStat = (stat) => (
 
 
 //Draw Circl    es on Map with interactive tooltip
-export const showDataOnMap = (data, caseType='cases') => (
+export const showDataOnMap = (data, casesType='cases') => (
     data.map(country => (
         <Circle
             center={[country.countryInfo.lat, country.countryInfo.long]}
             fillOpacity={0.4}
-            color={caseTypeColors[caseType].hex}
-            fillColor={caseTypeColors[caseType].hex}
+            color={casesTypeColors[casesType].hex}
+            fillColor={casesTypeColors[casesType].hex}
             radius = {
-                Math.sqrt(country[caseType]) * caseTypeColors[caseType].multiplier
+                Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
             }
         >
             <Popup>

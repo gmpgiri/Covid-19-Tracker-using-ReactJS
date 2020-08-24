@@ -3,7 +3,7 @@ import './Map.css';
 import {Map as LeafletMap, TileLayer} from "react-leaflet";
 import { showDataOnMap } from './util';
 
-function Map({countries, caseType, center, zoom}) {
+function Map({countries, casesType, center, zoom}) {
     return (
         <div className="map">
             <LeafletMap center={center} zoom={zoom}>
@@ -13,7 +13,7 @@ function Map({countries, caseType, center, zoom}) {
                 />
                 {/* loop through all the countries and draw circle
                     on screen */}
-                {showDataOnMap(countries, caseType)}
+                {showDataOnMap(countries, casesType)}
 
             </LeafletMap>
         </div>
