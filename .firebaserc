@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "covid-19-tracker-gmp",
+    "covid-19": "covid-19-tracker-gmp"
+  }
+}

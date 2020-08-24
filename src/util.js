@@ -49,7 +49,8 @@ export const showDataOnMap = (data, casesType='cases') => (
             radius = {
                 Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
             }
-        >
+        >                    
+
             <Popup>
                 <div className="info-container">
                     <div className="info-flag"
@@ -57,7 +58,7 @@ export const showDataOnMap = (data, casesType='cases') => (
                     />
                     <div className="info-name">{country.country}</div>
                     <div className="info-confirmed">Cases: {numeral(country.cases).format("0,0")}</div>
-                    <div className="info-recovered">Recoverd: {numeral(country.recoverd).format("0,0")}</div>
+                    <div className="info-recovered">Recoverd: {numeral(country.recovered).format("0,0")}</div>
                     <div className="info-deaths">Death: {numeral(country.deaths).format("0,0")}</div>
                     <div></div>
                 </div>
